@@ -1,0 +1,48 @@
+<%-include('header')-%>
+
+<div class="text-center center-div mt-5">
+  <div class="container w-25 border py-5 mt-5">
+    <h3>Welcome to User dashboard</h3>
+    <h5><%= locals.user ? user:"User" %></h5>
+
+    <h1>User Images:</h1>
+    <div id="user-images"></div>
+    <h1>User Videos:</h1>
+    <div id="user-videos"></div>
+
+    <script>
+        // Assume you get the user images and videos from the backend as JSON data
+        const userData = {
+            user_images: ['assets/img1.jpg', 'image2', 'image3'],
+            user_videos: ['video1', 'video2', 'video3']
+        };
+        // Function to display user images
+        function displayUserImages(images) {
+            const imagesContainer = document.getElementById('user-images');
+            imagesContainer.innerHTML = '';
+            images.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = image;
+                imagesContainer.appendChild(imgElement);
+            });
+        }
+        // Function to display user videos
+        function displayUserVideos(videos) {
+            const videosContainer = document.getElementById('user-videos');
+            videosContainer.innerHTML = '';
+            videos.forEach(video => {
+                const videoElement = document.createElement('video');
+                videoElement.src = video;
+                videoElement.controls = true;
+                videosContainer.appendChild(videoElement);
+            });
+        }
+        // Call the functions to display user images and videos
+        displayUserImages(userData.user_images);
+        displayUserVideos(userData.user_videos);
+    </script>
+    <a href="/route/logout">Logout</a>
+  </div>
+</div>
+
+<%-include('footer')-%>
