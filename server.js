@@ -20,6 +20,7 @@ app.set('view engine', 'ejs');
 //load static assets
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use('/assests', express.static(path.join(__dirname, 'public/assests')));
+app.use(express.static('public'));
 
 app.use(session({
     secret: uuidv4(),

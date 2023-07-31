@@ -8,7 +8,7 @@ const credential = {
 
 // Sample arrays of user images and videos (replace these with your actual data)
 const userImages = ['/assests/img1.jpg', '/assests/img2.jpg', '/assests/img3.jpg'];
-const userVideos = ['video1.mp4', 'video2.mp4', 'video3.mp4'];
+const userVideos = ['/assests/vid1.mp4', '/assests/vid2.mp4', '/assests/vid3.mp4'];
 
 // Function to get user images after login
 function getUserImages() {

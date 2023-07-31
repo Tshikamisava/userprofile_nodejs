@@ -5,32 +5,27 @@
     <h3>Welcome to User dashboard</h3>
     <h5><%= locals.user ? user:"User" %></h5>
 
-   <h2>Your Images:</h2>
-  <% if (images && images.length > 0) { %>
-    <ul>
-      <% images.forEach(image => { %>
-        <img src="/assests/img1.jpg<%= image %>" alt="User Image">
-      <% }); %>
-    </ul>
-  <% } else { %>
-    <p>No images available.</p>
-  <% } %>
-
-  <h2>Your Videos:</h2>
-  <% if (videos && videos.length > 0) { %>
-    <ul>
-      <% videos.forEach(video => { %>
-       
-          <video width="200" height="150" controls>
-            <source src="/assests/<%= video %>" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        
-      <% }); %>
-    </ul>
-  <% } else { %>
-    <p>No videos available.</p>
-  <% } %>
+    <h2>Images:</h2>
+    <% if (images && images.length > 0) { %>
+      <ul>
+        <% images.forEach((image) => { %>
+          <img src="<%= image %>" height="150" width="200" alt="User Image">
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>No images available.</p>
+    <% } %>
+  
+    <h2>Videos:</h2>
+    <% if (videos && videos.length > 0) { %>
+      <ul>
+        <% videos.forEach((video) => { %>
+          <video src="<%= video %>"  height="150" width="200" controls></video>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>No videos available.</p>
+    <% } %>
    
     <a href="/route/logout">Logout</a>
   </div>
